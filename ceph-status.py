@@ -30,19 +30,6 @@ remapped=0
 pgstates = ['creating', 'active', 'clean', 'down', 'replay', 'splitting', 'scrubbing', 'degraded', 'inconsistent', 'peering', 'repair', 'recovering', 'backfill', 'waitBackfill', 'incomplete', 'stale', 'remapped']
 iops = {'wbps' : 'write_bytes_sec', 'rbps': 'read_bytes_sec', 'ops': 'op_per_sec'}
 
-
-#Get data
-#pginfo = json.loads(subprocess.Popen('"%s" pg stat --format json' %ceph_bin, shell=True, stdout=subprocess.PIPE).communicate()[0])
-#pgtotal = pginfo['num_pgs']
-#pgstats = pginfo['num_pg_by_state']
-#pggdegraded = echo $pginfo | sed -n '/degraded/s/.* degraded (\([^%]*\)%.*/\1/p'
-
-
-#for dict in enumerate(pgstats):
-#    if dict[1]['name'] == "active+clean":
-#        active = dict[1]['num']
-
-
 def pgcount(pgtype):
     "Count the number of pgs that are in the given argument state"
     pgTypeCount = 0
