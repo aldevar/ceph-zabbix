@@ -111,5 +111,5 @@ if req in pgstates:
 
 if req in iops.keys():
     print iopsCount(iops[req])
-    sys.exit
+    sys.exit()
 
